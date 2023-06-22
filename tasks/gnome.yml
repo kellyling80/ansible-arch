@@ -1,0 +1,15 @@
+---
+- name: Install gnome packages
+  become: true
+  kewlfft.aur.aur:
+    name: "{{ gnome_packages }}"
+    use: yay
+    state: present
+  changed_when: false
+
+- name: Enable GDM service
+  become: true
+  service:
+    name: gdm
+    enabled: true
+  changed_when: false

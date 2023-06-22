@@ -1,0 +1,8 @@
+---
+- name: Install fonts packages
+  become: true
+  kewlfft.aur.aur:
+    name: "{{ font_packages }}"
+    use: yay
+    state: present
+  changed_when: false
